@@ -1,42 +1,6 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
-    "/home/giannis/react-project101/my-app/contracts/Greeter.sol": {
-      "lastModificationDate": 1630417482609,
-      "contentHash": "54c28c84e5277b35b8c8329ce9755dae",
-      "sourceName": "contracts/Greeter.sol",
-      "solcConfig": {
-        "version": "0.8.4",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "hardhat/console.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "Greeter"
-      ]
-    },
     "/home/giannis/react-project101/my-app/node_modules/hardhat/console.sol": {
       "lastModificationDate": 1630415966649,
       "contentHash": "cc4777addd464ea56fa35b1c45df0591",
@@ -460,9 +424,86 @@
       ]
     },
     "/home/giannis/react-project101/my-app/contracts/ApartmentRent.sol": {
-      "lastModificationDate": 1630619317173,
-      "contentHash": "777812f236dc4befdcc3aea82424ce44",
+      "lastModificationDate": 1630779831115,
+      "contentHash": "635ad21ec4eea7c10c77937ad067c6c2",
       "sourceName": "contracts/ApartmentRent.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol",
+        "./CreateApartment.sol",
+        "@openzeppelin/contracts/utils/Counters.sol",
+        "@openzeppelin/contracts/token/ERC721/ERC721.sol",
+        "@openzeppelin/contracts/utils/Strings.sol",
+        "@openzeppelin/contracts-ethereum-package/contracts/math/SafeMath.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ApartmentCreator"
+      ]
+    },
+    "/home/giannis/react-project101/my-app/contracts/Token.sol": {
+      "lastModificationDate": 1630674015587,
+      "contentHash": "3e1816607f7e32f25e6cc4bee6e67e83",
+      "sourceName": "contracts/Token.sol",
+      "solcConfig": {
+        "version": "0.8.4",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Token"
+      ]
+    },
+    "/home/giannis/react-project101/my-app/contracts/CreateApartment.sol": {
+      "lastModificationDate": 1630781495942,
+      "contentHash": "44f307b1e46ca264c75c1459e214252a",
+      "sourceName": "contracts/CreateApartment.sol",
       "solcConfig": {
         "version": "0.8.4",
         "settings": {
@@ -496,7 +537,7 @@
         "^0.8.0"
       ],
       "artifacts": [
-        "ApartmentCreator"
+        "CreateApartment"
       ]
     }
   }

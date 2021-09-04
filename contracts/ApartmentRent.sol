@@ -2,23 +2,19 @@
 pragma solidity ^0.8.0;
 
 import "hardhat/console.sol";
-
+import "./CreateApartment.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 import "@openzeppelin/contracts-ethereum-package/contracts/math/SafeMath.sol";
 
 
-contract ApartmentCreator {
-    using Counters for Counters.Counter;
-    Counters.Counter private _apartmentsIds;
+contract ApartmentCreator is CreateApartment {
+    
     
     uint public fee;
-    address payable public owner;
     address payable public renter;
     address payable transferFee;
-
-    uint256 listingPrice = 0.1 ether;
 
     enum State { Rent, Locked, Release, Closed, Complete}
 
@@ -102,30 +98,7 @@ contract ApartmentCreator {
     constructor() payable {
         owner = payable(msg.sender);
         transferFee = payable(0x8626f6940E2eb28930eFb4CeF49B2d1F2C9C1199);
-        fee = msg.value;
-
     }
-
-    struct Apartment {
-        uint apartmentsId;
-        address payable owner;
-        address payable renter;
-        uint price;
-        bool rented;
-
-        
-    }
-
-    mapping(uint256 => Apartment) private idToApartment;
-
-    event ApartmentCreated (
-        uint indexed apartmentsId,
-        address owner,
-        address renter,
-        uint256 price,
-        bool rented
-   
-    );
 
     function close() public onlyOwner inState(State.Rent) {
         state = State.Closed;
@@ -189,36 +162,7 @@ contract ApartmentCreator {
         }
     }
 
-    function apartmentPrice(uint256 _apartmentId) public view returns (uint256) {
-         uint256 price = idToApartment[_apartmentId].price;
-         return price;
-    }
 
-
-    function createApartment (uint256 _price) public onlyOwner payable {
-        require(_price > 0, "Price must be at least 1 wei");
-        
-
-        _apartmentsIds.increment();
-        uint256 apartmentsId = _apartmentsIds.current();
-        idToApartment[apartmentsId] = Apartment(
-            apartmentsId,
-            payable(msg.sender),
-            payable(address(0)),
-            _price,
-            false
-        );
-
-        transferFee.transfer(fee);
-
-        emit ApartmentCreated(
-            apartmentsId,
-            msg.sender,
-            address(0),
-            _price,
-            false
-        );
-    }
 
     function isRented(uint256 _apartmentId) public view returns( bool ) {
         return idToApartment[_apartmentId].rented;

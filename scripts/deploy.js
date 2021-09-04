@@ -8,16 +8,21 @@ async function main() {
     "Deploying contracts with the account:",
     deployer.address
   );
+  
+  const CreateApartment = await hre.ethers.getContractFactory("CreateApartment");
+  const createApartment = await CreateApartment.deploy();
+  await createApartment.deployed();
+  console.log("CreateApartment deployed to:", createApartment.address);
 
   const ApartmentCreator = await hre.ethers.getContractFactory("ApartmentCreator");
-  const apartmentCreator = await ApartmentCreator.deploy({ value: ethers.utils.parseEther("2.0") });
+  const apartmentCreator = await ApartmentCreator.deploy();
   await apartmentCreator.deployed();
   console.log("ApartmentCreator deployed to:", apartmentCreator.address);
 
-  const Greeter = await hre.ethers.getContractFactory("Greeter");
-  const greeter = await Greeter.deploy("Hello, Hardhat!");
-  await greeter.deployed();
-  console.log("Greeter deployed to:", greeter.address);
+  const Token = await hre.ethers.getContractFactory("Token");
+  const token = await Token.deploy();
+  await token.deployed();
+  console.log("Token deployed to:", token.address);
 
 }
 

@@ -11,6 +11,7 @@ import { TopSection } from "./topSection";
 import { Services } from "../../containers/HomePage/services";
 import { Footer } from "../../components/footer";
 import { ethers } from "ethers";
+import {  ApartmentCreatorUi } from "../../components/apartmentCreator";
 
 
 
@@ -42,6 +43,8 @@ export function HomePage(props) {
                 <AboutUs />
                 <Marginer direction="vertical" margin="5em" />
                 <Services />
+                <Marginer direction="vertical" margin="5em" />
+                <ApartmentCreatorUi />
                 <Marginer direction="vertical" margin="5em" />
                 <Footer />
             </PageContainer>
