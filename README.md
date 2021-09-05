@@ -1,3 +1,7 @@
+Full stack ethereum blockchain app for Airbnb like page 
+V1.0 in progress 
+
+
 ```shel
 npm install 
 go to /my-app/node_modules/@openzeppelin/contracts-ethereum-package/contracts/math/SafeMath.sol and change pragma Solidity to ^0.8.0
