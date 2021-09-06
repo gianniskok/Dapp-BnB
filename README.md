@@ -11,7 +11,9 @@ npx hardhat run scripts/deploy.js --network localhost
 npm install -g json-server
 json-server --watch db.json --static ./src/assets/thumbnails --port 9000
 install metamask extention chrome or firefox 
-create user import account 0 and 19 
+create user 
+create localhost [url: 127.0.0.1:8545, chainId 1337]
+import account 0 and 19 
 npm start
 ```
 
