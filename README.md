@@ -1,10 +1,12 @@
 Full stack ethereum blockchain app for Airbnb like page 
-V1.0 in progress 
+v0.1 in progress 
 
 
 ```shel
 npm install 
 go to /my-app/node_modules/@openzeppelin/contracts-ethereum-package/contracts/math/SafeMath.sol and change pragma Solidity to ^0.8.0
+go to src/app/components/apartmentCreator/index.jsx and change location of { ApartmentCreator, CreateApartment, Token} to your location folder
+go to src/app/components/serviceCard/index.jsx and change location of  { ApartmentCreator, CreateApartment, Token} to your location folder
 npx hardhat compile
 npx hardhat node
 npx hardhat run scripts/deploy.js --network localhost
