@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faGithub, faInstagram, faLinkedin, faLinkedinIn, faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { Logo } from "../logo";
 import tw from "twin.macro";
-
+import { Link } from "react-router-dom";
 
 const FooterContainer = styled.div `
 min-height: 250px;
@@ -130,19 +130,10 @@ export function Footer(props) {
                     <PrivacyText> &#169; All Rights Reserved, 2021</PrivacyText>
                 </LeftBottomContainer>
                 <RightBottomContainer>
-                    <SocialIconn>
-                        <FontAwesomeIcon icon={faFacebook} />
-                    </SocialIconn>
-                    <SocialIconn>
-                        <FontAwesomeIcon icon={faTwitter} />
-                    </SocialIconn>
-                    <SocialIconn>
-                        <FontAwesomeIcon icon={faInstagram} />
-                    </SocialIconn>
-                    <SocialIconn>
+                    <SocialIconn >
                         <FontAwesomeIcon icon={faGithub} />
-                    </SocialIconn>
-                    <SocialIconn>
+                    </SocialIconn>                 
+                    <SocialIconn >
                         <FontAwesomeIcon icon={faLinkedin} />
                     </SocialIconn>
                 </RightBottomContainer>

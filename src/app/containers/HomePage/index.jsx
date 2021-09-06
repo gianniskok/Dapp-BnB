@@ -35,8 +35,6 @@ export function HomePage(props) {
                 <NavBar />
                 <Marginer direction="vertical" margin="2em" />
                 <TopSection />
-                <Marginer direction="vertical" margin="6em" />
-                <BookCard />
                 <Marginer direction="vertical" margin="5em" />
                 <BookingSteps />
                 <Marginer direction="vertical" margin="5em" />
@@ -46,6 +44,8 @@ export function HomePage(props) {
                 <Marginer direction="vertical" margin="5em" />
                 <ApartmentCreatorUi />
                 <Marginer direction="vertical" margin="5em" />
+                <BookCard />
+                <Marginer direction="vertical" margin="6em" />
                 <Footer />
             </PageContainer>
     );

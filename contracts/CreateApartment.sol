@@ -6,8 +6,9 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 import "@openzeppelin/contracts-ethereum-package/contracts/math/SafeMath.sol";
+import "./Token.sol";
 
-contract CreateApartment {
+contract CreateApartment is Token {
 using Counters for Counters.Counter;
 Counters.Counter private _apartmentsIds;
 

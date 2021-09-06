@@ -424,8 +424,8 @@
       ]
     },
     "/home/giannis/react-project101/my-app/contracts/ApartmentRent.sol": {
-      "lastModificationDate": 1630779831115,
-      "contentHash": "635ad21ec4eea7c10c77937ad067c6c2",
+      "lastModificationDate": 1630843457998,
+      "contentHash": "7b8eaa8add597010af0b46a1becaefbb",
       "sourceName": "contracts/ApartmentRent.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -465,8 +465,8 @@
       ]
     },
     "/home/giannis/react-project101/my-app/contracts/Token.sol": {
-      "lastModificationDate": 1630674015587,
-      "contentHash": "3e1816607f7e32f25e6cc4bee6e67e83",
+      "lastModificationDate": 1630843373377,
+      "contentHash": "bf51e1b96bee1c41756b1674028f150d",
       "sourceName": "contracts/Token.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -501,8 +501,8 @@
       ]
     },
     "/home/giannis/react-project101/my-app/contracts/CreateApartment.sol": {
-      "lastModificationDate": 1630781495942,
-      "contentHash": "44f307b1e46ca264c75c1459e214252a",
+      "lastModificationDate": 1630838490229,
+      "contentHash": "7b5df712738db8afd54c4b495d6c44c3",
       "sourceName": "contracts/CreateApartment.sol",
       "solcConfig": {
         "version": "0.8.4",
@@ -531,7 +531,8 @@
         "@openzeppelin/contracts/utils/Counters.sol",
         "@openzeppelin/contracts/token/ERC721/ERC721.sol",
         "@openzeppelin/contracts/utils/Strings.sol",
-        "@openzeppelin/contracts-ethereum-package/contracts/math/SafeMath.sol"
+        "@openzeppelin/contracts-ethereum-package/contracts/math/SafeMath.sol",
+        "./Token.sol"
       ],
       "versionPragmas": [
         "^0.8.0"

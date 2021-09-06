@@ -13,10 +13,16 @@ contract Token {
         balances[msg.sender] = totalSupply;
     }
 
-    function transfer(uint _amount) external {
+    function transferfee(uint _amount) external payable{
         require(balances[msg.sender] >= _amount, "Not enough tokens");
         balances[msg.sender] -= _amount;
         balances[to] += _amount;
+    }
+
+    function transferToken(uint _amount, address _to) external payable{
+        require(balances[msg.sender] >= _amount, "Not enough tokens");
+        balances[msg.sender] -= _amount;
+        balances[_to] += _amount;
     }
 
     function balanceOf(address _account) external view returns (uint) {

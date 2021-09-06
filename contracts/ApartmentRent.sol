@@ -112,6 +112,7 @@ contract ApartmentCreator is CreateApartment {
     function confirmPurchase(uint256 _apartmentId, uint256 _rentingDays) public notOwner inState(State.Rent) condition(msg.value == (2 * idToApartment[_apartmentId].price * _rentingDays)) payable {
         require(idToApartment[_apartmentId].rented == false);
         renter = payable(msg.sender);
+        idToApartment[_apartmentId].renter == renter;
         state = State.Locked;
         idToApartment[_apartmentId].rented == true;
         emit ConfirmPurchase(
@@ -122,7 +123,6 @@ contract ApartmentCreator is CreateApartment {
 
     function confirmReceived(uint256 _apartmentId, uint256 _rentingDays) public onlyRenter inState(State.Locked) {
         state = State.Release;
-        renter.transfer(idToApartment[_apartmentId].price * _rentingDays);
         emit ConfirmReseived(block.timestamp, renter);   
     }
 

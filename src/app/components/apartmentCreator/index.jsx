@@ -90,6 +90,17 @@ export function ApartmentCreatorUi(props) {
     const [price, setPrice] = useState('');
     const [apartmentID, setApartmentId] = useState('');
 
+    async function transferToken() {
+        if( typeof window.ethereum !== 'undefined') {
+            await requestAccount()
+            const provider = new ethers.providers.Web3Provider(window.ethereum);
+            const signer = provider.getSigner()
+            const contract = new ethers.Contract(tokenAddress, Token.abi, signer)
+            const transaction = await contract.transferfee(5)
+            await transaction.wait()
+        }
+    }
+
     async function createApartment() {
         if( !price ) {console.log("Put valid price") ;
             return} 
@@ -99,16 +110,19 @@ export function ApartmentCreatorUi(props) {
             const signer = provider.getSigner()
             const contract = new ethers.Contract(createApartmentAddress, CreateApartment.abi, signer)
             const transaction = await contract.createApartment(price)
-            await transaction.wait()               
+            await transaction.wait()
+            transferToken()               
         }
     }
 
     return(
         <ApartmentCreatorContainer>
-            <Title> Declare your apartment easily by just setting a price in the following box </Title>
+            <Title> Declare your apartment </Title>
+            <Marginer direction="vertical" margin = "1em"/>
             <StepDescription>
-                Declare price!
+                Declare the price of your apartment in Tokens per night!
             </StepDescription>
+            <Marginer direction="vertical" margin = "1em"/>
             <PriceContainer>
                 <Input size="0.02em" onChange={e => setPrice(e.target.value)} placeholder="0" />             
                 <ButtonsContainer onClick={createApartment}>
