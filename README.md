@@ -4,8 +4,8 @@ v0.1 in progress
  
 ```shel
 sudo apt install npm
-sudo npm install 
 --in my-app folder---
+sudo npm install 
 cd node_modules/@openzeppelin/contracts-ethereum-package/contracts/math/SafeMath.sol 
 -change pragma Solidity to ^0.8.0
 cd src/app/components/apartmentCreator/index.jsx 
