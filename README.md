@@ -1,8 +1,9 @@
 Full stack ethereum blockchain app for Airbnb like page 
 v0.1 in progress 
 
-sudo apt install npm 
+ 
 ```shel
+sudo apt install npm
 sudo npm install 
 --in my-app folder---
 cd node_modules/@openzeppelin/contracts-ethereum-package/contracts/math/SafeMath.sol 
