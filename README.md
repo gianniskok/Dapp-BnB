@@ -28,7 +28,7 @@ npm install -g json-server
 json-server --watch db.json --static ./src/assets/thumbnails --port 9000
 ```
 
-install metamask extention chrome or firefox 
+install metamask extention on chrome or firefox 
   create user 
   connect to localhost:8545  
   import account 0 and 19 (Copy privare keys from harhat node for addresses 0 and 19, click on metamask extension, select import accounts and paste private keyes)
