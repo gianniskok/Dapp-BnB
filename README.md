@@ -14,8 +14,10 @@ cd my-app
 sudo npm install 
 ```
 Go to node_modules/@openzeppelin/contracts-ethereum-package/contracts/math
- open SafeMath.sol 
- In line 1 change pragma Solidity from ^0.6.0 to pragma Solidity  ^0.8.0
+
+-open SafeMath.sol 
+ 
+-In line 1 change pragma Solidity from ^0.6.0 to pragma Solidity  ^0.8.0
 ```shel
 npx hardhat compile
 ```
