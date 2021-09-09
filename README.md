@@ -1,12 +1,14 @@
 Full stack ethereum blockchain app for Airbnb like page 
 v0.1 in progress 
 
- 
 ```shel
 sudo apt install npm
 ```
 ```shel
-cd your-project-folder/my-app
+git clone https://github.com/gianniskok/my-app.git
+```
+```shel
+cd my-app
 ```
 ```shel
 sudo npm install 
