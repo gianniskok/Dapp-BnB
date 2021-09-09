@@ -27,7 +27,7 @@ sudo npm install
 
 ----open SafeMath.sol 
  
-----In line 1 change pragma Solidity from ^0.6.0 to pragma Solidity  ^0.8.0
+----In line 1 change pragma Solidity from "^0.6.0 " to "^0.8.0"
 
 5. Start the local test node
 ```shel
