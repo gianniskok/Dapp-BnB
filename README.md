@@ -4,24 +4,36 @@ v0.1 in progress
  
 ```shel
 sudo apt install npm
---in my-app folder---
+```
+```shel
+cd your-project-folder/my-app
+```
+```shel
 sudo npm install 
-cd node_modules/@openzeppelin/contracts-ethereum-package/contracts/math/SafeMath.sol 
--change pragma Solidity to ^0.8.0
-cd src/app/components/apartmentCreator/index.jsx 
-  -Change path of { ApartmentCreator, CreateApartment, Token} to your path folder
-cd src/app/components/serviceCard/index.jsx 
-  -Change path of  { ApartmentCreator, CreateApartment, Token} to your location folder
+```
+Go to node_modules/@openzeppelin/contracts-ethereum-package/contracts/math
+ open SafeMath.sol 
+ In line 1 change pragma Solidity to ^0.6.0 to pragma Solidity to ^0.8.0
+```shel
 npx hardhat compile
+```
+```shel
 npx hardhat node
+```
+```shel
 npx hardhat run scripts/deploy.js --network localhost
+```
+```shel
 npm install -g json-server
 json-server --watch db.json --static ./src/assets/thumbnails --port 9000
-install metamask extention chrome or firefox { 
+```
+
+install metamask extention chrome or firefox 
   create user 
-  create localhost [url: 127.0.0.1:8545, chainId 1337]
-  import account 0 and 19 
-}
+  connect to localhost:8545  
+  import account 0 and 19 (Copy privare keys from harhat node for addresses 0 and 19, click on metamask extension, select import accounts and paste private keyes)
+
+```shel
 npm start
 ```
 
