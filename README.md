@@ -1,24 +1,23 @@
-# Full stack ethereum blockchain app for Airbnb like page 
+# Full stack ethereum blockchain app for apartment renting 
 
-### v0.1 in progress  :
+#### v0.1 in progress  :
 
   - [x] Create an apartment ad 
   - [x] Rent an apartment
   - [ ] Release the apartment
   - [x] Transfer Tokens for paying rent and fee 
-  - [ ] Create new Renting ads Ui without json-server 
+  - [ ] Dynamicly add new Renting ads in json-server 
   - [ ] ...
 
 
 
 
-### Disclaimer :
- 1. Ui of renting ads is static on json server and is gonna get deprecated 
 
 
 
 
-# __Here's how to deploy this project:__
+
+## __Here's how to deploy this project:__
 
 1. Clone the repo
 ```shel
