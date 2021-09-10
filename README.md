@@ -14,7 +14,7 @@ Disclaimer :
 
 
 
-Here's how to deploy this project:
+**Here's how to deploy this project: **
 
 1. Clone the repo
 ```shel
