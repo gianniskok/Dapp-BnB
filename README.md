@@ -1,20 +1,24 @@
-Full stack ethereum blockchain app for Airbnb like page 
+# Full stack ethereum blockchain app for Airbnb like page 
 
-v0.1 in progress for now you can :
+### v0.1 in progress  :
 
- 1. Create an apartment ad 
- 2. Rent an apartment 
+  - [x] Create an apartment ad 
+  - [x] Rent an apartment
+  - [ ] Release the apartment
+  - [x] Transfer Tokens for paying rent and fee 
+  - [ ] Create new Renting ads Ui without json-server 
+  - [ ] ...
 
 
 
 
-Disclaimer :
+### Disclaimer :
  1. Ui of renting ads is static on json server and is gonna get deprecated 
 
 
 
 
-**Here's how to deploy this project: **
+# __Here's how to deploy this project:__
 
 1. Clone the repo
 ```shel
@@ -31,9 +35,9 @@ sudo npm install
 
 4. Go to node_modules/@openzeppelin/contracts-ethereum-package/contracts/math 
 
-----open SafeMath.sol 
+- open SafeMath.sol 
  
-----In line 1 change pragma Solidity from "^0.6.0 " to "^0.8.0"
+- In line 1 change pragma Solidity from "^0.6.0 " to "^0.8.0"
 
 5. Start the local test node
 ```shel
@@ -50,18 +54,16 @@ json-server --watch db.json --static ./src/assets/thumbnails --port 9000
 ```
 
 8. install metamask extention on chrome or firefox.
+  - create user.
+  - connect to localhost:8545 .
+  - import account 0 and 19.
+  _(Copy privare keys from harhat node for addresses 0 and 19, click on metamask extension, select import accounts and paste private keys)._
+  Click [here](https://metamask.zendesk.com/hc/en-us/articles/360015489331-How-to-import-an-Account) for more info on metamask import accounts
 
-9. create user.
-
-10. connect to localhost:8545 .
-
-11. import account 0 and 19.
-
-----Copy privare keys from harhat node for addresses 0 and 19, click on metamask extension, select import accounts and paste private keyes.
-
-12. Run the app
+9. Run the app
 ```shel
 npm start
 ```
 
 
+#### Feel free to contact me on giannis.kokkoros@hotmail.com for more info
