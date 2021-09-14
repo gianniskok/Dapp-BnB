@@ -1,0 +1,12 @@
+{
+    "services":[
+        {"id": 1,
+        "title": "1 Bedroom, 1 kitchen, 1 living-room, 1 WC", 
+        "thumbnailUrl": "http://localhost:9000/house1.jpg",
+        "rating": 4,
+        "rate": 20,
+        "specialist":
+            {"id": 1,
+             "fullName": "Tsimiski 51B, Xanthi, 67100"}}
+        ]
+}
