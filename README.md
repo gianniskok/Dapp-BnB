@@ -33,11 +33,13 @@ cd my-app
 sudo npm install 
 ```
 
-4. Go to node_modules/@openzeppelin/contracts-ethereum-package/contracts/math 
+4. Change Solidity compilers version to 0.8.X
+```shel
+cd node_modules/@openzeppelin/contracts-ethereum-package/contracts/math 
+vim SafeMath.sol
+```
 
-- open SafeMath.sol 
- 
-- In line 1 change pragma Solidity from "^0.6.0 " to "^0.8.0"
+ - In line 1 change pragma Solidity from "^0.6.0 " to "^0.8.0"
 
 5. Start the local test node
 ```shel
