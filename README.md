@@ -10,7 +10,8 @@
   - [ ] ...
 
 
-
+### Disclaimer
+- json-server is gonna get deprecated the only reason i use it is for front-end ideas 
 
 
 
