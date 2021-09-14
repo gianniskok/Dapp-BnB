@@ -6,12 +6,13 @@
   - [x] Rent an apartment
   - [ ] Release the apartment
   - [x] Transfer Tokens for paying rent and fee 
-  - [ ] Dynamicly add new Renting ads in json-server 
-  - [ ] ...
+  - [ ] Dynamicly show apartment ads to front-ent
+  - [x] conntect to ipfs for image uploading , storing hash in smartContract and using them on the front end 
 
 
 
-
+### Disclaimer
+- json-server is gonna get deprecated the only reason i use it is for front-end ideas 
 
 
 
