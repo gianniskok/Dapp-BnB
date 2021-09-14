@@ -1,6 +1,6 @@
 # Full stack ethereum blockchain app for apartment renting 
 
-#### v0.1 in progress  :
+#### v0.1 in progress (for latest changes click [here](https://github.com/gianniskok/my-app/tree/testing)  :
 
   - [x] Create an apartment ad 
   - [x] Rent an apartment
