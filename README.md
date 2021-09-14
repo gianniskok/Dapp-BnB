@@ -6,7 +6,7 @@
   - [x] Rent an apartment
   - [ ] Release the apartment
   - [x] Transfer Tokens for paying rent and fee 
-  - [ ] Dynamicly add new Renting ads in json-server 
+  - [ ] Dynamicly add new Renting ads in front-end
   - [ ] ...
 
 
