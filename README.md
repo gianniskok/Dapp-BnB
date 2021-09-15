@@ -6,6 +6,7 @@
   - [x] Rent an apartment
   - [ ] Release the apartment
   - [x] Transfer Tokens for paying rent and fee 
+  - [x] connect to ipfs for image uploading , storing hash in smartContract and using them on the front end 
   - [x] Dynamicly add new Renting ads in front-end
   - [ ] ...
 
