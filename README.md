@@ -6,7 +6,7 @@
   - [x] Rent an apartment
   - [ ] Release the apartment
   - [x] Transfer Tokens for paying rent and fee 
-  - [ ] Dynamicly add new Renting ads in front-end
+  - [x] Dynamicly add new Renting ads in front-end
   - [ ] ...
 
 
@@ -49,20 +49,15 @@ npx hardhat node
 ```shel
 npx hardhat run scripts/deploy.js --network localhost
 ```
-7. Install json-server
-```shel
-npm install -g json-server
-json-server --watch db.json --static ./src/assets/thumbnails --port 9000
-```
 
-8. install metamask extention on chrome or firefox.
+7. install metamask extention on chrome or firefox.
   - create user.
   - connect to localhost:8545 .
   - import account 0 and 19.
   _(Copy privare keys from harhat node for addresses 0 and 19, click on metamask extension, select import accounts and paste private keys)._
   Click [here](https://metamask.zendesk.com/hc/en-us/articles/360015489331-How-to-import-an-Account) for more info on metamask import accounts
 
-9. Run the app
+8. Run the app
 ```shel
 npm start
 ```
