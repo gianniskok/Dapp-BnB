@@ -11,14 +11,6 @@
   - [ ] ...
 
 
-### Disclaimer
-- json-server is gonna get deprecated the only reason i use it is for front-end ideas 
-
-
-
-
-
-
 ## __Here's how to deploy this project:__
 
 1. Clone the repo
