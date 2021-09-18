@@ -4,10 +4,11 @@
 
   - [x] Create an apartment ad 
   - [x] Rent an apartment
-  - [ ] Release the apartment
+  - [x] Release the apartment
   - [x] Transfer Tokens for paying rent and fee 
-  - [ ] Dynamicly show apartment ads to front-end
+  - [x] Dynamicly show apartment ads to front-end
   - [x] connect to ipfs for image uploading , storing hash in smartContract and using them on the front end 
+  - [x] exchange tokens for ethers 
 
 
 
