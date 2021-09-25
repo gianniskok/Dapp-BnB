@@ -12,13 +12,6 @@
 
 
 
-### Disclaimer
-- json-server is gonna get deprecated the only reason i use it is for front-end ideas 
-
-
-
-
-
 ## __Here's how to deploy this project:__
 
 1. Clone the repo
@@ -34,12 +27,13 @@ cd my-app
 sudo npm install 
 ```
 
-
 4. Change Solidity compilers version to 0.8.X
 ```shel
 cd node_modules/@openzeppelin/contracts-ethereum-package/contracts/math 
 vim SafeMath.sol
 ```
+
+ - In line 1 change pragma Solidity from "^0.6.0 " to "^0.8.0"
 
 5. Start the local test node
 ```shel
@@ -49,20 +43,15 @@ npx hardhat node
 ```shel
 npx hardhat run scripts/deploy.js --network localhost
 ```
-7. Install json-server
-```shel
-npm install -g json-server
-json-server --watch db.json --static ./src/assets/thumbnails --port 9000
-```
 
-8. install metamask extention on chrome or firefox.
+7. install metamask extention on chrome or firefox.
   - create user.
   - connect to localhost:8545 .
   - import account 0 and 19.
   _(Copy privare keys from harhat node for addresses 0 and 19, click on metamask extension, select import accounts and paste private keys)._
   Click [here](https://metamask.zendesk.com/hc/en-us/articles/360015489331-How-to-import-an-Account) for more info on metamask import accounts
 
-9. Run the app
+8. Run the app
 ```shel
 npm start
 ```
