@@ -1,14 +1,15 @@
 # Full stack ethereum blockchain app for apartment renting 
 
-#### v0.1 in progress (for latest changes click [here](https://github.com/gianniskok/my-app/tree/testing) )  :
+#### v0.1 in progress  :
 
   - [x] Create an apartment ad 
   - [x] Rent an apartment
   - [x] Release the apartment
   - [x] Transfer Tokens for paying rent and fee 
+  - [x] Dynamicly show apartment ads to front-end
   - [x] connect to ipfs for image uploading , storing hash in smartContract and using them on the front end 
-  - [x] Dynamicly add new Renting ads in front-end
-  - [ ] ...
+  - [x] exchange tokens for ethers 
+
 
 
 ## __Here's how to deploy this project:__
