@@ -3,12 +3,11 @@
 #### v0.1 in progress  :
 
   - [x] Create an apartment ad 
-  - [x] Rent an apartment
-  - [x] Release the apartment
   - [x] Transfer Tokens for paying rent and fee 
   - [x] Dynamicly show apartment ads to front-end
   - [x] connect to ipfs for image uploading , storing hash in smartContract and using them on the front end 
   - [x] exchange tokens for ethers 
+  - [x] Renting the apartment for certain days , canceling the reservation and being available for days outside of the range of current renting 
 
 
 
