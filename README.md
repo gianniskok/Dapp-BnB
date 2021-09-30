@@ -8,6 +8,7 @@
   - [x] connect to ipfs for image uploading , storing hash in smartContract and using them on the front end 
   - [x] exchange tokens for ethers 
   - [x] Renting the apartment for certain days , canceling the reservation and being available for days outside of the range of current renting 
+  - [ ] erc721 token for ownership and renting rights
 
 
 
