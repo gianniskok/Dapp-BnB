@@ -149,9 +149,10 @@ export function ApartmentRenterUi(props) {
             const signer = provider.getSigner()
             const sender = signer.getAddress()
             const contract = new ethers.Contract(tokenAddress, Token.abi, signer)
-            const transaction = await contract.transferFrom(sender, to, amount)
+            const coins = ((depUnix - arUnix)/86400000)*amount
+            const transaction = await contract.transferFrom(sender, to, coins)
             await transaction.wait()
-            console.log(`${amount} Coins successfully sent to ${to} `)
+            console.log(`${coins} Coins successfully sent to ${to} `)
             rentApartment()
         }
         
