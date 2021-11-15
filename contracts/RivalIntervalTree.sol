@@ -2,6 +2,7 @@
 pragma solidity ^0.8.0;
 
 // ----------------------------------------------------------------------------
+// DISCLAIMER: I AM NOT THE AUTHOR OF THIS LIBRARY ALL PROPS GOES TO https://github.com/gtaschuk/erc809/blob/master/contracts/RivalIntervalTreeLibrary.sol
 // Rival Interval Tree Library v1.0-pre-release-a
 // Adapted from https://github.com/bokkypoobah/BokkyPooBahsRedBlackTreeLibrary, https://github.com/gtaschuk/erc809/blob/master/contracts/RivalIntervalTreeLibrary.sol
 //
