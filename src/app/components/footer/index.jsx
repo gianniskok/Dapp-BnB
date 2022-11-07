@@ -6,8 +6,10 @@ import { Logo } from "../logo";
 import tw from "twin.macro";
 
 const FooterContainer = styled.div `
-min-height: 250px;
-border-top: 0.5px solid #000;
+    min-height: 50px;
+    max-height: 70px;
+    background-color: #000;
+
     ${tw`
         w-full
         flex
@@ -40,7 +42,7 @@ const ContentContainer = styled.div `
 `;
 
 const BottomContainer = styled.div `
-    height: 70px;
+    height: 20px;
     border-top: 0.6px solid #000;
     ${tw`
         flex
@@ -68,7 +70,7 @@ const LeftBottomContainer = styled.div `
 const Title = styled.h2 `
     ${tw`
         mb-2
-        text-black
+        text-white
     `};
     font-weight: 600;
     font-size: 20px;
@@ -112,20 +114,9 @@ const SocialIconn = styled.div `
 export function Footer(props) {
     return (
         <FooterContainer>
-            <TopContainer>
-                <ContentContainer>
-                    <Title>Access</Title>
-                    <FLink>Log In </FLink>
-                </ContentContainer>
-                <ContentContainer>
-                    <Title>Contact Us</Title>
-                    <FLink>via e-mail</FLink>
-                    <FLink>Via chat</FLink>
-                </ContentContainer>
-            </TopContainer>
             <BottomContainer>
                 <LeftBottomContainer>
-                    <Logo hideLogo color="#8A8A8A" textsize={25} />
+                    <Logo hideLogo color="#FFF" textsize={25} />
                     <PrivacyText> &#169; All Rights Reserved, 2021</PrivacyText>
                 </LeftBottomContainer>
                 <RightBottomContainer>

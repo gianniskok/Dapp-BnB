@@ -3,9 +3,16 @@ import styled from "styled-components";
 import tw from "twin.macro";
 import { Logo } from "../logo";
 import { NavItems } from "./navitems";
+import { Link } from "react-router-dom";
+
+
 
 const NavBarContainer = styled.div `
-    min-height:68px;
+    min-height:58px;
+    max-height: 70px;
+    background-color: #000;
+
+
     ${tw`
         w-full
         max-w-screen-xl
@@ -14,7 +21,6 @@ const NavBarContainer = styled.div `
         justify-between
         lg:pl-14
         lg:pr-14
-        bg-gray-300 
     `}
 `;
 
@@ -29,11 +35,14 @@ const LogoContainer = styled.div`
     `};
 `;
 export function NavBar(props) {
+
    return (
         <NavBarContainer>
             <LogoContainer>
-                <Logo/>
-                <NavItems/>
+                <Link to="/">
+                    <Logo/>
+                </Link>
+                <NavItems />
             </LogoContainer>
         </NavBarContainer>
    );

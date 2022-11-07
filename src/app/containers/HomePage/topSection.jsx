@@ -1,15 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
+import { useState, useEffect } from "react";
+
 import { Button } from "../../components/button";
 import { Marginer } from "../../components/marginer";
 import TopSectionImg from "../../../assets/images/home2.jpeg"
-import { injected } from "../../components/wallet/connectors";
-import { useWeb3React } from "@web3-react/core";
+import { Link } from "react-router-dom";
+import algosdk from "algosdk";
+import { PeraWalletConnect } from "@perawallet/connect";
+import PeraLogo from "../../../assets/images/button-pera-connect@2x.png";
+
+const peraWallet = new PeraWalletConnect();
+
 
 const TopSectionContainer = styled.div`
     min-height: 500px
     margin-top: 10em;
+
     ${tw`
         w-full
         max-w-screen-xl
@@ -25,7 +33,45 @@ const TopSectionContainer = styled.div`
     `};
 `;
 
+const ServicesContainer = styled.div `
+    ${tw`
+        w-full
+        flex
+        flex-col
+        items-center
+        ml-10
+    `};
+`;
+
+const NavItem = styled.li`
+    ${tw`
+        flex
+        items-start
+        text-xs
+        md:text-base
+        text-black
+        font-medium
+        mr-1
+        md:mr-5
+        cursor-pointer
+        transition
+        duration-300
+        ease-in-out
+        hover:text-gray-700
+               
+    `};
+`;
+
+const Title = styled.h1 `
+    ${tw`
+        text-4xl
+        font-extrabold
+        text-white
+    `};
+`;
+
 const LeftContainer = styled.div`
+
     ${tw`
         w-1/2
         flex
@@ -36,6 +82,35 @@ const LeftContainer = styled.div`
     `};
 `;
 
+const Image = styled.div`
+    width: auto;
+    ${tw`h-6 md:h-10`};
+
+    img {
+        width: auto;
+        height: 100%;
+    }
+`;
+
+const LogoText = styled.div`
+    ${tw`
+        text-sm
+        md:text-lg
+        font-bold
+        text-black
+        ml-3
+        
+    `};
+`;
+
+const LogoContainer = styled.div`
+    ${tw`
+        flex
+        items-center
+        ml-5
+        mt-5
+    `};
+`;
 
 const Slogan = styled.h1 `
     ${tw`
@@ -57,24 +132,24 @@ const Description = styled.p`
         text-gray-500 
         md:text-base
         font-normal
-        mt-4
+        mt-0.5
     `}
 `;
 
 const StandaloneApartment = styled.div`
-width:40em;
-max-height: 30em;
-position: absolute;
-top: 10em;
-right: 5em;
-z-index: -1;
+    width:40em;
+    max-height: 30em;
+    position: absolute;
+    top: 10em;
+    right: 5em;
+    z-index: -1;
 
 
-img {
-    width: 100%;
-    height: auto;
-    max-height: max-content;
-}
+    img {
+        width: 100%;
+        height: auto;
+        max-height: max-content;
+    }
 
 `;
 
@@ -90,52 +165,108 @@ const ButtonsContainer=styled.div`
 
 export function TopSection(props) {
 
-    const {active, account,  activate, deactivate } = useWeb3React();
+    const [accountAddress, setAccountAddress] = useState(null);
     
-   
 
-    async function connect() {
-        try {
-            await activate(injected)
-        } catch(ex) {
-            console.log(ex)
-        }
+    const isConnectedToPeraWallet = !!accountAddress;
+    useEffect(() => {
+      // Reconnect to the session when the component is mounted
+      peraWallet
+        .reconnectSession()
+        .then((accounts) => {
+          peraWallet.connector.on("disconnect", handleDisconnectWalletClick);
+  
+          if (accounts.length) {
+            setAccountAddress(accounts[0]);
+          }
+        })
+        .catch((e) => console.log(e));
+    }, []);
+
+    function handleDisconnectWalletClick() {
+        peraWallet.disconnect();
+    
+        setAccountAddress(null);
     }
 
-    async function disconnect() {
-        try {
-            deactivate(injected)
-        } catch(ex) {
-            console.log(ex)
-        }
+    function handleConnectWalletClick() {
+        peraWallet
+          .connect()
+          .then((newAccounts) => {
+            peraWallet.connector.on("disconnect", handleDisconnectWalletClick);
+    
+            setAccountAddress(newAccounts[0]);
+            setTimeout(5000)
+
+          })
+          .catch((error) => {
+            if (error?.data?.type !== "CONNECT_MODAL_CLOSED") {
+              console.log(error);
+            }
+          });
     }
-
-   
-
-    return (
+    if(accountAddress === null){
+        return(
             <TopSectionContainer>
                 <LeftContainer>
                     <Marginer direction="vertical" margin="1.5em"/>
-                    <Slogan>Click and Go!</Slogan>
-                    <Slogan>Live decentralized </Slogan>
-                    <Slogan>All arround the globe!</Slogan>
-                    <Marginer direction="vertical" margin="1em"/>
+                    <Slogan>Fuck Caesar!</Slogan>
                     <Description>
-                        Visit your favorite places and rent appartments with the best available prices by paying via your favorite cryptocurency!
-                        Become a member now!
+                        Ressurect and upgrade your OG BrokeBoiz
                     </Description>
-                    {!active ? <ButtonsContainer onClick={() => connect()} > 
-                        {<Button text="Sign in with metamask" />}
-                    </ButtonsContainer> : 
-                    <ButtonsContainer onClick={() => disconnect() }> 
-                        <Button text="Disconect from metamask" />                    
-                    </ButtonsContainer>}
-                        
-                    { active ? <Description > Connected with {account} </Description>  : <Description> Not connected </Description>}                
+
+                    <ServicesContainer>
+            <Title>You need to connect wallet first!</Title>
+            <NavItem onClick={
+                handleConnectWalletClick
+            }>
+            {
+                <LogoContainer>
+                    <Image>
+                        <img src={PeraLogo}  alt=""/>
+                    </Image>
+                    <LogoText>
+                        Connect
+                    </LogoText>
+                </LogoContainer> }
+            </NavItem>
+            
+        </ServicesContainer>
                 </LeftContainer>
-                <StandaloneApartment>
-                    <img src={TopSectionImg} alt="" />
-                </StandaloneApartment>
+                <LeftContainer>
+                    <StandaloneApartment>
+                        <img src={TopSectionImg} alt="" />
+                    </StandaloneApartment>
+                </LeftContainer>
+                <Marginer direction="vertical" margin="5em" />
+            </TopSectionContainer>
+        )
+    }
+        return (
+            <TopSectionContainer>
+                <LeftContainer>
+                    <Marginer direction="vertical" margin="1.5em"/>
+                    <Slogan>Fuck Caesar!</Slogan>
+                    <Description>
+                        Ressurect and upgrade your OG BrokeBoiz
+                    </Description>
+
+                    <Link to="/resurrect">
+                        <ButtonsContainer onClick={console.log(0)} > 
+                            {<Button text="Resurrect Your BBs" />}
+                        </ButtonsContainer> 
+                    </Link>
+                    <Link to="/upgrade">
+                        <ButtonsContainer onClick={console.log(0) }> 
+                            <Button text="Upgrade Your BBs" />                    
+                        </ButtonsContainer>  
+                    </Link>         
+                </LeftContainer>
+                <LeftContainer>
+                    <StandaloneApartment>
+                        <img src={TopSectionImg} alt="" />
+                    </StandaloneApartment>
+                </LeftContainer>
                 <Marginer direction="vertical" margin="5em" />
             </TopSectionContainer>
     );

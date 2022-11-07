@@ -1,22 +1,30 @@
 import './App.css';
 import { HomePage } from './app/containers/HomePage';
+import {Resurrect} from './app/containers/Resurrect';
 import React from "react";
-import { Web3ReactProvider } from "@web3-react/core";
-import { ethers } from 'ethers';
+import { BrowserRouter as Router , Route, Switch} from 'react-router-dom';
+import { Upgrade } from './app/containers/Upgrade';
 
-export function getLibrary(provider) { 
-  return  new ethers.providers.Web3Provider(window.ethereum); 
-}
+
 
 function App() {
   return (
-    <div className="App">
-      <Web3ReactProvider getLibrary={getLibrary}>
-        <HomePage />
-      </Web3ReactProvider>
-    </div>
-  );
-      
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route exact path="/">
+            <HomePage />
+          </Route>
+          <Route exact path="/resurrect">
+            <Resurrect />
+          </Route>
+          <Route exact path="/upgrade">
+            <Upgrade />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );     
 }
 
 export default App;

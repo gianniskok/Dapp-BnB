@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)http://localhost:3000/resurrect -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="icon" href="http://localhost:3000/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Web site created using create-react-app">
+    <link rel="apple-touch-icon" href="http://localhost:3000/logo192.png">
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="http://localhost:3000/manifest.json">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  <style>@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800;900&display=swap);</style><style>/* ./src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9zcmMvaW5kZXguY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLG9CQUFvQjtBQUNwQixjQUFjO0FBQ2Qsb0JBQW9CO0FBQ3BCLG1CQUFtQjs7QUFJbkI7RUFDRSxXQUFXO0VBQ1gsWUFBWTtBQUNkOztBQUVBO0VBQ0UsU0FBUztFQUNUOztjQUVZO0VBQ1osbUNBQW1DO0VBQ25DLGtDQUFrQztBQUNwQzs7QUFFQTtFQUNFO2FBQ1c7QUFDYiIsInNvdXJjZXNDb250ZW50IjpbIi8qIC4vc3JjL2luZGV4LmNzcyAqL1xuQHRhaWx3aW5kIGJhc2U7XG5AdGFpbHdpbmQgY29tcG9uZW50cztcbkB0YWlsd2luZCB1dGlsaXRpZXM7XG5cbkBpbXBvcnQgdXJsKFwiaHR0cHM6Ly9mb250cy5nb29nbGVhcGlzLmNvbS9jc3MyP2ZhbWlseT1Qb3BwaW5zOndnaHRANTAwOzcwMDs4MDA7OTAwJmRpc3BsYXk9c3dhcFwiKTtcblxuaHRtbCwgYm9keSwgI3Jvb3Qge1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiAxMDAlO1xufVxuXG5ib2R5IHtcbiAgbWFyZ2luOiAwO1xuICBmb250LWZhbWlseTogXCJQb3BwaW5zXCIsIC1hcHBsZS1zeXN0ZW0sIEJsaW5rTWFjU3lzdGVtRm9udCwgJ1NlZ29lIFVJJywgJ1JvYm90bycsICdPeHlnZW4nLFxuICAgICdVYnVudHUnLCAnQ2FudGFyZWxsJywgJ0ZpcmEgU2FucycsICdEcm9pZCBTYW5zJywgJ0hlbHZldGljYSBOZXVlJyxcbiAgICBzYW5zLXNlcmlmO1xuICAtd2Via2l0LWZvbnQtc21vb3RoaW5nOiBhbnRpYWxpYXNlZDtcbiAgLW1vei1vc3gtZm9udC1zbW9vdGhpbmc6IGdyYXlzY2FsZTtcbn1cblxuY29kZSB7XG4gIGZvbnQtZmFtaWx5OiBzb3VyY2UtY29kZS1wcm8sIE1lbmxvLCBNb25hY28sIENvbnNvbGFzLCAnQ291cmllciBOZXcnLFxuICAgIG1vbm9zcGFjZTtcbn0iXSwic291cmNlUm9vdCI6IiJ9 */</style><style>.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9zcmMvQXBwLmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGtCQUFrQjtBQUNwQjs7QUFFQTtFQUNFLGNBQWM7RUFDZCxvQkFBb0I7QUFDdEI7O0FBRUE7RUFDRTtJQUNFLDRDQUE0QztFQUM5QztBQUNGOztBQUVBO0VBQ0UseUJBQXlCO0VBQ3pCLGlCQUFpQjtFQUNqQixhQUFhO0VBQ2Isc0JBQXNCO0VBQ3RCLG1CQUFtQjtFQUNuQix1QkFBdUI7RUFDdkIsNkJBQTZCO0VBQzdCLFlBQVk7QUFDZDs7QUFFQTtFQUNFLGNBQWM7QUFDaEI7O0FBRUE7RUFDRTtJQUNFLHVCQUF1QjtFQUN6QjtFQUNBO0lBQ0UseUJBQXlCO0VBQzNCO0FBQ0YiLCJzb3VyY2VzQ29udGVudCI6WyIuQXBwIHtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xufVxuXG4uQXBwLWxvZ28ge1xuICBoZWlnaHQ6IDQwdm1pbjtcbiAgcG9pbnRlci1ldmVudHM6IG5vbmU7XG59XG5cbkBtZWRpYSAocHJlZmVycy1yZWR1Y2VkLW1vdGlvbjogbm8tcHJlZmVyZW5jZSkge1xuICAuQXBwLWxvZ28ge1xuICAgIGFuaW1hdGlvbjogQXBwLWxvZ28tc3BpbiBpbmZpbml0ZSAyMHMgbGluZWFyO1xuICB9XG59XG5cbi5BcHAtaGVhZGVyIHtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzI4MmMzNDtcbiAgbWluLWhlaWdodDogMTAwdmg7XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICBmb250LXNpemU6IGNhbGMoMTBweCArIDJ2bWluKTtcbiAgY29sb3I6IHdoaXRlO1xufVxuXG4uQXBwLWxpbmsge1xuICBjb2xvcjogIzYxZGFmYjtcbn1cblxuQGtleWZyYW1lcyBBcHAtbG9nby1zcGluIHtcbiAgZnJvbSB7XG4gICAgdHJhbnNmb3JtOiByb3RhdGUoMGRlZyk7XG4gIH1cbiAgdG8ge1xuICAgIHRyYW5zZm9ybTogcm90YXRlKDM2MGRlZyk7XG4gIH1cbn1cbiJdLCJzb3VyY2VSb290IjoiIn0= */</style><style type="text/css">@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+.pera-wallet-connect-modal {
+  --pera-wallet-connect-modal-font-family: "Inter", sans-serif;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.pera-wallet-connect-modal * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--pera-wallet-connect-modal-font-family);
+  font-smooth: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.pera-wallet-connect-modal ul,
+.pera-wallet-connect-modal ol,
+.pera-wallet-connect-modal li {
+  list-style-type: none;
+}
+
+.pera-wallet-connect-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: 48px;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  outline: none;
+  cursor: pointer;
+  font-family: var(--pera-wallet-connect-modal-font-family);
+  font-size: 14px;
+}
+
+.pera-wallet-connect-modal__logo img {
+  display: block;
+  width: 32px;
+}
+
+.pera-wallet-connect-modal__close-button {
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  background: #333333;
+  border: 1.5px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 100%;
+}
+
+.pera-wallet-connect-modal__body {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 680px;
+  max-width: calc(100vw - 80px);
+  padding: 28px;
+  background-color: #edeffb;
+  box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.08);
+  border-radius: 24px;
+  animation: 0.3s PeraWalletConnectSlideIn ease-out;
+  transform: translate(-50%, -50%);
+}
+.pera-wallet-connect-modal__body::before {
+  --background-line: #1e0972 0 1.2px, transparent 0 calc(100% - 1.2px), #1e0972;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  content: "";
+  background-image: linear-gradient(var(--background-line)), linear-gradient(90deg, var(--background-line));
+  background-size: 116px 116px;
+  mix-blend-mode: overlay;
+  border-radius: 24px;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.pera-wallet-connect-modal__body__header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: absolute;
+  top: -44px;
+  right: -44px;
+  left: 0;
+}
+
+@media (max-width: 767px) {
+  .pera-wallet-connect-modal__body {
+    top: 40px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    max-width: unset;
+    height: calc(100 * var(--vh));
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02), 0 4px 12px rgba(0, 0, 0, 0.03);
+    border-radius: 20px 20px 0px 0px;
+    animation: 0.3s PeraWalletConnectMobileSlideIn ease-out;
+    overflow-y: auto;
+    transform: unset;
+  }
+  .pera-wallet-connect-modal__body::before {
+    background-image: unset;
+  }
+
+  .pera-wallet-connect-modal__body__header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: static;
+  }
+
+  .pera-wallet-connect-modal__close-button {
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: unset;
+    box-shadow: unset;
+  }
+}
+@keyframes PeraWalletConnectSlideIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% + 24px));
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+@keyframes PeraWalletConnectMobileSlideIn {
+  0% {
+    top: 30%;
+    opacity: 0;
+  }
+  100% {
+    top: 40px;
+    opacity: 1;
+  }
+}</style><style type="text/css">.pera-wallet-connect-modal-touch-screen-mode {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 46px;
+  padding: 4px;
+}
+.pera-wallet-connect-modal-touch-screen-mode--pending-message-view {
+  gap: 56px;
+  grid-template-rows: auto 48px;
+  height: 100%;
+  padding-bottom: 70px;
+}
+
+.pera-wallet-connect-modal-touch-screen-mode__launch-pera-wallet-button,
+.pera-wallet-connect-modal-touch-screen-mode__install-pera-wallet-button {
+  display: block;
+  padding: 14px;
+  border-radius: 12px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.09px;
+  font-weight: 500;
+}
+
+.pera-wallet-connect-modal-touch-screen-mode__launch-pera-wallet-button {
+  margin-bottom: 32px;
+  background-color: #6b46fe;
+  color: #ffffff;
+}
+
+.pera-wallet-connect-modal-touch-screen-mode__install-pera-wallet-button {
+  margin-bottom: 20px;
+  background-color: #f2f3f8;
+  color: #2c3559;
+}
+
+.pera-wallet-connect-modal-touch-screen-mode__new-to-pera-box {
+  position: relative;
+  margin-bottom: 32px;
+  border-top: 1px solid #e6e8ee;
+}
+
+.pera-wallet-connect-modal-touch-screen-mode__new-to-pera-box__text {
+  position: absolute;
+  top: -12px;
+  right: calc(50% - 56px);
+  width: 116px;
+  color: #69708d;
+  background-color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.04px;
+  text-align: center;
+}</style><style type="text/css">.pera-wallet-connect-modal-information-section {
+  padding: 12px;
+  padding-right: 0;
+}
+
+.pera-wallet-connect-modal-information-section__pera-icon {
+  margin-bottom: 32px;
+}
+
+.pera-wallet-connect-modal-information-section__title {
+  margin-bottom: 82px;
+  color: #2c3559;
+  font-size: 22px;
+  line-height: 30px;
+  letter-spacing: -0.4px;
+  font-weight: 500;
+}
+
+.pera-wallet-connect-modal-information-section__secondary-title {
+  margin-bottom: 16px;
+  color: #69708d;
+  font-size: 10px;
+  line-height: 20px;
+  letter-spacing: 2px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.pera-wallet-connect-modal-information-section__features-item {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 36px auto;
+  gap: 16px;
+}
+.pera-wallet-connect-modal-information-section__features-item:not(:last-of-type) {
+  margin-bottom: 20px;
+}
+
+.pera-wallet-connect-modal-information-section__features-item__icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+
+.pera-wallet-connect-modal-information-section__features-item__description {
+  color: #2c3559;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.01px;
+  font-weight: 500;
+}
+
+@media (max-width: 767px) {
+  .pera-wallet-connect-modal-information-section__information-section {
+    padding: 0;
+  }
+
+  .pera-wallet-connect-modal-information-section__pera-icon {
+    margin-bottom: 16px;
+  }
+
+  .pera-wallet-connect-modal-information-section__connect-pera-title {
+    margin-bottom: 8px;
+    color: #2c3559;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: -0.2px;
+  }
+
+  .pera-wallet-connect-modal-information-section__title {
+    margin-bottom: 40px;
+    color: #2c3559;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.09px;
+    font-weight: 400;
+  }
+
+  .pera-wallet-connect-modal-information-section__features-item__icon-wrapper {
+    background-color: #f2f3f8;
+  }
+
+  .pera-wallet-connect-modal-information-section__features-item__description {
+    color: #69708d;
+  }
+}</style><style type="text/css">.pera-wallet-connect-modal-pending-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.pera-wallet-connect-modal-pending-message__text {
+  max-width: 271px;
+  margin-top: 20px;
+  color: #2c3559;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: -0.26px;
+}
+
+.pera-wallet-connect-modal-pending-message__cancel-button {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  color: #2c3559;
+  background-color: #f2f3f8;
+  border-radius: 12px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.09px;
+  font-weight: 500;
+}</style><style type="text/css">.pera-wallet-connect-modal-desktop-mode {
+  display: grid;
+  grid-template-columns: 205px auto;
+  gap: 70px;
+}
+
+.pera-wallet-connect-modal-desktop-mode__accordion__description {
+  padding: 0 40px 20px 64px;
+}
+
+.pera-wallet-connect-modal-desktop-mode__pera-download-qr-code {
+  display: flex;
+  width: 264px;
+  height: 264px;
+  margin: -12px auto 0;
+}
+
+#pera-wallet-connect-modal-desktop-mode__qr-code {
+  width: 216px;
+  height: 216px;
+  margin: 0 auto;
+  display: flex;
+  box-shadow: 0px 12px 32px rgba(26, 35, 91, 0.1);
+  border-radius: 24px;
+}</style><style type="text/css">.pera-wallet-accordion-item {
+  background-color: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.02), 0px 4px 12px rgba(0, 0, 0, 0.03);
+}
+.pera-wallet-accordion-item:not(:last-of-type) {
+  margin-bottom: 20px;
+}
+.pera-wallet-accordion-item:not(:last-of-type) .pera-wallet-accordion-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pera-wallet-accordion-item:not(:last-of-type) #pera-wallet-connect-modal-desktop-mode__qr-code {
+  margin-top: -20px;
+}
+
+.pera-wallet-accordion-item--active .pera-wallet-accordion-panel {
+  height: 364px;
+  border-radius: 0 0 24px 24px;
+  transition: height ease-in 0.2s;
+}
+.pera-wallet-accordion-item--active .pera-wallet-accordion-button {
+  padding: 28px 24px 12px;
+  border-radius: 24px 24px 0 0;
+  transition: all ease-in 0.2s;
+}
+.pera-wallet-accordion-item--active .pera-wallet-accordion-icon {
+  transform: rotate(90deg);
+}</style><style type="text/css">.pera-wallet-accordion-button {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  padding: 12px 24px;
+  color: #2c3559;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 24px;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: -0.1px;
+  font-weight: 600;
+  transition: all ease-in 0.2s;
+}</style><style type="text/css">.pera-wallet-accordion-icon {
+  transition: all ease-in 0.2s;
+}</style><style type="text/css">.pera-wallet-accordion-panel {
+  height: 0;
+  overflow: hidden;
+  color: #69708d;
+  background-color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.04px;
+  transition: height ease-in 0.2s;
+}</style><style type="text/css">.pera-wallet-wallet-redirect-modal {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 56px;
+  grid-template-rows: auto 48px;
+  height: 100%;
+  padding: 4px;
+  padding-bottom: 70px;
+}
+
+.pera-wallet-redirect-modal__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.pera-wallet-redirect-modal__content__title {
+  margin: 20px 0 8px;
+  color: #2c3559;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: -0.26px;
+}
+
+.pera-wallet-redirect-modal__content__description,
+.pera-wallet-redirect-modal__content__install-pera-text {
+  color: #2c3559;
+  max-width: 271px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.09px;
+  text-align: center;
+}
+
+.pera-wallet-redirect-modal__content__description {
+  margin-bottom: 24px;
+}
+
+.pera-wallet-redirect-modal__content__install-pera-text__link {
+  color: #6b46fe;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.09px;
+  text-align: center;
+}
+
+.pera-wallet-redirect-modal__launch-pera-wallet-button {
+  display: block;
+  padding: 14px;
+  color: #ffffff;
+  background-color: #6b46fe;
+  border-radius: 12px;
+  text-decoration: none;
+  text-align: center;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.09px;
+  font-weight: 500;
+}</style><style type="text/css">.pera-wallet-sign-txn-toast {
+  --pera-wallet-sign-txn-toast-width: 422px;
+  --pera-wallet-sign-txn-toast-height: 134px;
+  --pera-wallet-sign-txn-toast-font-family: "Inter", sans-serif;
+  position: fixed;
+  bottom: 28px;
+  right: 35px;
+  z-index: 11;
+  overflow: hidden;
+  width: var(--pera-wallet-sign-txn-toast-width);
+  height: var(--pera-wallet-sign-txn-toast-height);
+  background: #edeffb;
+  border-radius: 8px;
+  animation: 0.2s PeraWalletSignTxnToastSlideIn ease-out;
+}
+.pera-wallet-sign-txn-toast * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--pera-wallet-sign-txn-toast-font-family);
+  font-smooth: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.pera-wallet-sign-txn-toast ul,
+.pera-wallet-sign-txn-toast ol,
+.pera-wallet-sign-txn-toast li {
+  list-style-type: none;
+}
+
+.pera-wallet-sign-txn-toast__header__close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.pera-wallet-sign-txn-toast__content__lottie-animation {
+  position: absolute;
+  top: -75px;
+  left: -100px;
+  width: 368px;
+  height: 368px;
+}
+
+.pera-wallet-sign-txn-toast__content__description {
+  position: absolute;
+  top: 40px;
+  right: 48px;
+  max-width: 197px;
+  color: #2c3559;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: -0.1px;
+}
+
+@media (max-width: 767px) {
+  .pera-wallet-sign-txn-toast {
+    display: none;
+  }
+}
+@keyframes PeraWalletSignTxnToastSlideIn {
+  0% {
+    bottom: 12px;
+    opacity: 0;
+  }
+  100% {
+    bottom: 26px;
+    opacity: 1;
+  }
+}</style></head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  <script src="./React App_files/bundle.js"></script><script src="./React App_files/vendors_main.chunk.js"></script><script src="./React App_files/main.chunk.js"></script>
+
+<script src="chrome-extension://ldinpeekobnhjjdofggfgjlcehhmanlj/inpage.js" id="stacks-wallet-provider"></script><iframe style="position: fixed; top: 0px; left: 0px; width: 100%; height: 100%; border: none; z-index: 2147483647;" src="./React App_files/saved_resource.html"></iframe></body></html>

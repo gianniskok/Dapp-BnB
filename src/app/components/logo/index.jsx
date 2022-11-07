@@ -4,6 +4,7 @@ import tw from "twin.macro";
 
 import HomeLogoImg from "../../../assets/images/hlogo.png";
 
+
 const LogoContainer = styled.div`
     ${tw`
         flex
@@ -18,7 +19,7 @@ const LogoText = styled.div`
         text-xl
         md:text-2xl
         font-bold
-        text-black
+        text-white
         ml-3
         
     `};
@@ -37,10 +38,11 @@ const Image = styled.div`
 export function Logo(props) {
     return (
         <LogoContainer>
+
             <Image>
                 <img src={HomeLogoImg}  alt=""/>
             </Image>
-            <LogoText>HouseShare</LogoText>
+            <LogoText>OG BrokeBoiz</LogoText>
         </LogoContainer>
     )
 }

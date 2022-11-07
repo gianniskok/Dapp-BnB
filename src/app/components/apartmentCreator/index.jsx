@@ -3,16 +3,13 @@ import styled from "styled-components";
 import { Marginer } from "../marginer";
 import tw from "twin.macro";
 import { useState, useEffect } from 'react';
-import { ethers} from 'ethers';
 import { Button } from "../../components/button";
-import CreateApartment from "../../../artifacts/contracts/CreateApartment.sol/CreateApartment.json"
-import Token from '../../../artifacts/contracts/Token.sol/Token.json';
+
 
 const{ create } = require('ipfs-http-client');
 const client = create({host: 'ipfs.infura.io', port: 5001, protocol: 'https'});
 
-const createApartmentAddress = '0xe7f1725e7734ce288f8367e1bb143e90bb3f0512'; 
-const tokenAddress = '0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0';
+
 
 const ApartmentCreatorContainer = styled.div`
     width: 100%;
@@ -146,31 +143,6 @@ export function ApartmentCreatorUi(props) {
     
     const[imgLink, setImgLink] = useState('');
 
-    async function transferToken() {
-        if( typeof window.ethereum !== 'undefined') {
-            await requestAccount()
-            const provider = new ethers.providers.Web3Provider(window.ethereum);
-            const signer = provider.getSigner()
-            const contract = new ethers.Contract(tokenAddress, Token.abi, signer)
-            const transaction = await contract.transfer(5, '0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266')
-            await transaction.wait()
-            createApartment()
-        }
-    }
-
-    async function createApartment() {
-        if( !price ) {console.log("Put valid price") ;
-            return} 
-        if( typeof window.ethereum !== 'undefined') {
-            await requestAccount()
-            const provider = new ethers.providers.Web3Provider(window.ethereum);
-            const signer = provider.getSigner()
-            const contract = new ethers.Contract(createApartmentAddress, CreateApartment.abi, signer)
-            const transaction = await contract.createApartment(price, imgLink, address, details)
-            await transaction.wait()              
-        }
-    }
-  
    
 
     return(
@@ -199,7 +171,7 @@ export function ApartmentCreatorUi(props) {
                 <InputText size="0.1em" onChange={e => setDetails(e.target.value)} placeholder="Details of Apartment" />          
             </Form>  
             <Marginer direction="vertical" margin="1em" />
-            {imgLink!=='' && <ButtonsContainer onClick={transferToken}>
+            {imgLink!=='' && <ButtonsContainer onClick={console.log(0)}>
                 <Button text="Create Apartment" />
             </ButtonsContainer> } 
 
